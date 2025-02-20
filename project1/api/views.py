@@ -8,7 +8,7 @@ from django.http import HttpResponse,JsonResponse
 
 def student_details(request):
 
-    #complex dta
+    #complex data
     stu=Student.objects.get(id=1)
     print('stu: ', stu)
 
