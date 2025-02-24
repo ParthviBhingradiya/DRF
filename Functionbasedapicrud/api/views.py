@@ -25,7 +25,8 @@ def student_api(request,pk=None):
             serializer.save()
             return Response({'msg':'Data Created'},status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
-    
+     git commit -m"test commit"
+      git push origin main    
     if request.method=='PUT':
         id=pk
         stu=Student.objects.get(pk=id)
