@@ -1,5 +1,5 @@
 """
-URL configuration for Viewset project.
+URL configuration for Modelviewset project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -20,8 +20,11 @@ from rest_framework.routers import DefaultRouter
 from api import views
 
 router=DefaultRouter()
+# Register Router in Viewset
+# router.register('studentapi',views.StudentModelViewSet,basename='student')
+#rearonlymodelviewapi
+router.register('studentapi',views.StudentReadOnlyModelViewSet,basename='student')
 
-router.register('studentapi',views.StudentViewSet,basename='student')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
