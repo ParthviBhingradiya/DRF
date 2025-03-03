@@ -1,5 +1,5 @@
 """
-URL configuration for Tokenauthentication3 project.
+URL configuration for Filter project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -15,18 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
-from rest_framework.routers import DefaultRouter
+from django.urls import path
 from api import views
-from api.auth import CustomAuthTOken
-router=DefaultRouter()
-
-# Register Router in Viewset
-router.register('studentapi',views.StudentModelViewSet,basename='student')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
-    path('gettoken/',CustomAuthTOken.as_view()),
-
+    path('studentapi/',views.StudentList.as_view())
 ]

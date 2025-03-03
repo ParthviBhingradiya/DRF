@@ -11,4 +11,3 @@ class CustomAuthTOken( ObtainAuthToken):
         return Response({'token':token.key,
                         'user_id':user.pk,
                         'email':user.email})
-    
